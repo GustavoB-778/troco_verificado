@@ -17,14 +17,12 @@ function calcularFatura() {
     }
     const fatura=unitaria*quantidad;
     const faturaConvertidaEmReais = fatura.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
-    paragrafoResultado.textContent = `Fatura: ${faturaConvertidaEmReais}`
-    if(client >= "fatura"){
+    paragrafoResultado.textContent = `Valor total: ${faturaConvertidaEmReais}`
+    if(client >= fatura){
         const resultado2=client-fatura;
-        alert(resultado2);
+        alert(resultado2+ " reais de troco");
         }else{
             alert("Dinheiro insuficiente");
             return
         }
-        
-    // paragrafoResultado.textContent = minutos <= 100 ? "Fatura: R$ 50,00" : "Fatura: " + ((minutos - 100) * 2 + 50).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 }
